@@ -2,47 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitamarhi Public School - Exam Maker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ludo Mobile</title>
     <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-
-<div class="container no-print">
-    <h1>Smart Exam Creator</h1>
-    <div class="setup-form">
-        <input type="text" id="schoolName" placeholder="School Name" value="Sitamarhi Public School">
-        <input type="text" id="schoolAddress" placeholder="Address" value="Koat Bazar, Ward No- 17, Sitamarhi">
-        <input type="text" id="session" placeholder="Examination" value="3rd Term Examination 2025">
-        <div class="row">
-            <input type="text" id="subject" placeholder="Subject" value="EVS">
-            <input type="text" id="className" placeholder="Class" value="Two">
-        </div>
-        <div class="row">
-            <input type="number" id="totalMarks" placeholder="Full Marks" value="80">
-            <input type="text" id="timeLimit" placeholder="Time" value="2 hrs">
-        </div>
-        <div class="logo-input">
-            <label>Upload School Logo: <input type="file" id="logoUpload" accept="image/*"></label>
+    <div id="game-container">
+        <div id="status">Room: <span id="room-name">Loading...</span></div>
+        <div id="ludo-board"></div>
+        
+        <div class="controls">
+            <div id="dice-result">⚀</div>
+            <button id="dice-btn">ROLL</button>
         </div>
     </div>
-
-    <div class="controls">
-        <input type="file" id="imageUpload" multiple accept="image/*" style="display:none">
-        <label for="imageUpload" class="custom-file-upload">🖼️ Scan Multiple Handwritten Pages</label>
-        <div id="ocrStatus">Ready</div>
-        <button onclick="generatePreview()" class="generate-btn">Apply Final Header</button>
-    </div>
-</div>
-
-<div id="print-area">
-    <div id="preview-content" contenteditable="true"></div>
-</div>
-
-<div class="action-bar no-print">
-    <button onclick="window.print()" class="download-btn">Print / Save A4 PDF</button>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
